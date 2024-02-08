@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    font-family: "Poor Story", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(83, 27, 39);
+}
+
+/*rgba(12, 94, 187, 0.596);*/
+img {
+    border: 0;
+}
+
+ul,
+ol,
+li,
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 1%;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.content {
+    margin-top: 3rem;
+    display: grid;
+    font-size: 1rem;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projectTitle {
+    color: rgb(173, 111, 40);
+    /* Set the text color to white */
+}
+
+.navbar li a {
+    color: rgb(13, 105, 13);
+    font-weight: bold;
+}
+
+.build {
+    position: fixed;
+    display: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    flex-direction: column;
+    align-items: center;
+    bottom: 15%;
+    /* You can adjust the value based on your preference */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease;
+    /* Smooth transition effect */
+}
+
+.build::before {
+    content: '';
+    position: absolute;
+    bottom: -.3rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    /* Adjust the thickness of the underline */
+    background-color: black;
+    transition: width 0.3s ease;
+    /* Animation for the underline width */
+}
+
+.build:hover::before {
+    width: 100%;
+}
+
+.container {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    gap: 2rem;
+    background-color: rgb(190, 106, 67);
+    border-radius: 1rem;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+
+.output-container {
+    position: sticky;
+    top: 123px;
+    /* Adjust this value according to the height of your header */
+    flex-direction: column;
+    display: flex;
+    gap: .5rem;
+}
+
+.image-holder {
+    background-color: beige;
+    margin-left: 13%;
+    margin-right: 13%;
+    width: auto;
+    height: 250px;
+    z-index: 1;
+    border-radius: 1rem;
+    display: flex;
+    border-top-right-radius: 8rem;
+    border-top-left-radius: 8rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-btn,
+.next-btn {
+    min-width: 100px;
+    background-color: bisque;
+    border-radius: .5rem;
+    color: tomato;
+}
+
+button {
+    border-radius: .5rem;
+    background-color: rgba(51, 218, 65, 0.651);
+
+}
+
+button:hover {
+    cursor: pointer;
+
+
+}
+
+.inactive {
+    opacity: 0.5;
+    /* Reduce opacity to visually indicate inactive state */
+    pointer-events: none;
+    /* Disable pointer events to prevent interaction */
+    cursor: default;
+    /* Set cursor to default to indicate non-interactivity */
+}
+
+.ingredient-container {
+    width: auto;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.ingredient-container.active {
+    display: flex;
+}
+
+.ingredient-container label {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label {
+    text-decoration: line-through;
+}
+
+@media screen and (max-width: 890px) {
+    .container {
+        flex-direction: column;
+        /* Display items vertically */
+    }
+
+    .ingredient-container {
+        width: 100%;
+        /* Take full width */
+        margin-bottom: 2rem;
+        /* Add some space between the containers */
+    }
+}
+
+.Menu-title {
+    padding-left: 8%;
+    margin-top: 1.3rem;
+    font-size: 22px;
+    color: white;
+}
+
+/*color: rgb(196, 240, 167);*/
+
+.search-container {
+    position: relative;
+    width: auto;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    gap: 2rem;
+    background-color: beige;
+    border-radius: 1rem;
+    box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+
+.search-options-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-options-bar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .4rem;
+    gap: 1rem;
+}
+
+.options button {
+    font-size: 1rem;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+}
+
+.options button:hover {
+    color: white;
+    background-color: black;
+}

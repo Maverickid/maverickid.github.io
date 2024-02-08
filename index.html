@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Animation</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Kanit:ital@1&family=Poor+Story&family=Work+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="video-container">
+        <video id="MyVideo" src="videos/Timeline 1.mov" autoplay></video>
+    </div>
+    <header class="header">
+        <h1 class="projectTitle">The Deli Deli-cious Project</h1>
+        <div class="navbar">
+            <ul>
+                <li><a href="home.html" class="home">Home</a></li>
+                <li><a href="about.html" class="about">About Us</a></li>
+            </ul>
+        </div>
+          
+    </header>
+    <a href="home.html" class="build" id="buildElement">Build Your Own >></a>
+    
+          
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById("MyVideo");
+            var buildElement = document.getElementById('buildElement');
+
+            video.currentTime = 0; // Reset video to the beginning
+            video.muted = true; // Mute the video
+            video.play(); // Start playing the video
+
+            setTimeout(function () {
+                buildElement.style.display = 'flex';
+            }, 4500); // 4000 milliseconds (4 seconds)
+        });
+    </script>
+</body>
+</html>
